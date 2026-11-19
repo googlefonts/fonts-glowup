@@ -21,8 +21,8 @@
   'use strict';
 
   // Update these if the repo is ever renamed or transferred.
-  const REPO_OWNER = 'emmamarichal';
-  const REPO_NAME = 'fontsglowup';
+  const REPO_OWNER = 'googlefonts';
+  const REPO_NAME = 'fonts-glowup';
   const REPO_BRANCH = 'main';
   const DB_PATH = 'data/links-database.json';
   const TUTORIALS_DB_PATH = 'data/tutorials.json';

@@ -8,7 +8,7 @@ const TypoConfig = (function () {
   // point to the public site, never to http://localhost:8000 — so when the
   // tool runs locally, this address is used instead of the current one.
   // On any other host (GitHub Pages, a fork…), the current address wins.
-  const PUBLIC_SITE_URL = 'https://emmamarichal.github.io/fontsglowup/';
+  const PUBLIC_SITE_URL = 'https://googlefonts.github.io/fonts-glowup/';
 
   // GitHub refuses comments longer than 65,536 characters, and the full
   // report link is part of the comment. A small margin is kept below it.

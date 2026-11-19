@@ -1,6 +1,6 @@
 # Typo Guide Generator
 
-**🔗 Live site: [emmamarichal.github.io/fontsglowup](https://emmamarichal.github.io/fontsglowup/)**
+**🔗 Live site: [googlefonts.github.io/fonts-glowup](https://googlefonts.github.io/fonts-glowup/)**
 
 A tool for triaging a font submission: check off the problems found on a project, the tool suggests the relevant links and tutorials from an editable database, runs Fontspector on the font, lets you attach annotated screenshots — then gives you **a Markdown checklist to post as a comment on the font's GitHub issue**, with **a link to the full report** (complete Fontspector messages, tutorials, screenshots).
 
@@ -15,12 +15,12 @@ A fully static site, built for GitHub Pages. No backend, no data ever sent anywh
 **To test locally** (before pushing, or while the repo is still private), serve the folder with a small HTTP server. Opening `index.html` directly (`file://…`) doesn't work: the browser refuses to load the JSON files and the Fontspector engine that way.
 
 ```bash
-cd path/to/fontsglowup        # the folder that contains index.html
+cd path/to/fonts-glowup        # the folder that contains index.html
 python3 -m http.server 8000
 # then open http://localhost:8000 — stop the server with Ctrl+C
 ```
 
-When the tool runs locally, the links *inside the GitHub comment* still point to the published site (`https://emmamarichal.github.io/fontsglowup/…`), since a `localhost` link would be useless to the designer — so push your changes before posting a comment that relies on a new `report.html`. The "Open the full report" button under the comment uses your local copy, for checking. The published address is `PUBLIC_SITE_URL` in `js/config.js`; on any other host (GitHub Pages, a fork) the current address is used automatically.
+When the tool runs locally, the links *inside the GitHub comment* still point to the published site (`https://googlefonts.github.io/fonts-glowup/…`), since a `localhost` link would be useless to the designer — so push your changes before posting a comment that relies on a new `report.html`. The "Open the full report" button under the comment uses your local copy, for checking. The published address is `PUBLIC_SITE_URL` in `js/config.js`; on any other host (GitHub Pages, a fork) the current address is used automatically.
 
 ## Repo structure
 
@@ -317,4 +317,4 @@ Make sure `vendor/fontspector/` is committed along with everything else — with
 - **The engine is ~14.5 MB** (~4.5 MB compressed): the first drop of a session takes a moment on a slow connection; after that it's cached.
 - **The paste fallback's free-text parser is a heuristic, not a guarantee.** It's been tested against several realistic formats (JSON, `--ghmarkdown`-style emoji/label patterns, plain "STATUS id: message" lines, markdown with bold/backticks) and degrades gracefully — worst case, it finds nothing and says so, rather than showing something wrong. But a genuinely unusual paste could still slip past it; if a report you're confident is valid comes back empty, check `js/fontspector.js`'s `extractChecksFromText()`.
 
-Part of [Google Fonts tools](https://github.com/emmamarichal/gf-issues-dashboard#readme).
+Part of [Google Fonts tools](https://github.com/googlefonts/issues-dashboard#readme).
